@@ -1,0 +1,1441 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>我们的小宇宙 · 情侣纪念</title>
+  <meta name="description" content="把我们的故事、照片和心动细节，收藏在一个只属于我们的小宇宙里。">
+  <meta name="theme-color" content="#ff6b8b">
+  <meta name="color-scheme" content="light">
+  <meta property="og:title" content="我们的小宇宙 · 情侣纪念">
+  <meta property="og:description" content="把相爱的每一天，都好好收藏在这里。">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            love: "#ff6b8b",
+            gold: "#d4af37"
+          }
+        }
+      }
+    };
+  </script>
+  <script>
+    document.documentElement.classList.replace("no-js", "js");
+  </script>
+  <style>
+    :root {
+      --pink: #ff6b8b;
+      --pink-deep: #e75274;
+      --pink-soft: #ffe9ee;
+      --pink-mist: #fff5f7;
+      --gold: #d4af37;
+      --gold-deep: #9c7a17;
+      --ink: #3c2c31;
+      --muted: #77656b;
+      --muted-soft: #9a858c;
+      --white: #ffffff;
+      --line: rgba(255, 107, 139, 0.16);
+      --line-strong: rgba(255, 107, 139, 0.3);
+      --shadow-soft: 0 20px 55px rgba(111, 55, 73, 0.08);
+      --font-display: ui-rounded, "Arial Rounded MT Bold", "Hiragino Maru Gothic ProN", "Yuanti SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --font-body: "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --content-width: 720px;
+      --radius-lg: 1.5rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 1.5rem;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      background-color: #fffafb;
+      background-image:
+        radial-gradient(ellipse 90% 46% at 50% -8%, rgba(255, 107, 139, 0.16), transparent 64%),
+        radial-gradient(circle at 94% 22%, rgba(212, 175, 55, 0.08), transparent 24rem),
+        linear-gradient(180deg, #fff8fa 0%, #fffdfd 42%, #fff9fb 100%);
+      background-repeat: no-repeat;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    ::selection {
+      color: var(--ink);
+      background: #ffd5df;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(255, 107, 139, 0.48);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    .page-container {
+      width: min(var(--content-width), calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding-block: clamp(4rem, 12vw, 6.5rem);
+      scroll-margin-top: 1.25rem;
+    }
+
+    .section--soft {
+      background: linear-gradient(180deg, rgba(255, 245, 247, 0), rgba(255, 245, 247, 0.92) 12%, rgba(255, 245, 247, 0.92) 88%, rgba(255, 245, 247, 0));
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.65rem 1rem;
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--pink-deep);
+      border-radius: 999px;
+      transform: translateY(-180%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+      transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.2, 0.72, 0.25, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal--1 { --reveal-delay: 80ms; }
+    .reveal--2 { --reveal-delay: 150ms; }
+    .reveal--3 { --reveal-delay: 220ms; }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.9rem;
+      color: var(--gold-deep);
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker__index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 1.55rem;
+      padding-inline: 0.45rem;
+      color: var(--gold-deep);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      background: rgba(255, 252, 239, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 999px;
+    }
+
+    .section-kicker__rule {
+      width: 2.25rem;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.55), transparent);
+    }
+
+    .section-title {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 7.5vw, 2.65rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .section-lead {
+      max-width: 34rem;
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.85;
+    }
+
+    .section-head {
+      margin-bottom: clamp(1.7rem, 5vw, 2.5rem);
+    }
+
+    .placeholder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.24rem 0.58rem;
+      color: #9f4b61;
+      font-size: 0.61rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      background: #fff1f4;
+      border: 1px solid rgba(255, 107, 139, 0.2);
+      border-radius: 999px;
+    }
+
+    .placeholder-badge::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: var(--pink);
+      border-radius: 50%;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 100svh;
+      padding-block: 4.75rem 2.75rem;
+      overflow: hidden;
+      scroll-margin-top: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -9rem;
+      right: -10rem;
+      width: 24rem;
+      height: 24rem;
+      border: 1px solid rgba(255, 107, 139, 0.14);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 2.75rem rgba(255, 255, 255, 0.2),
+        0 0 0 5.5rem rgba(255, 107, 139, 0.035);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "♡";
+      position: absolute;
+      bottom: 2rem;
+      left: max(-3rem, calc(50% - 24rem));
+      color: rgba(255, 107, 139, 0.055);
+      font-family: var(--font-display);
+      font-size: clamp(12rem, 42vw, 24rem);
+      line-height: 1;
+      transform: rotate(-14deg);
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero__topline {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #9d6572;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .hero__dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+    }
+
+    .hero__mark {
+      display: grid;
+      place-items: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      margin: 1.5rem 0 0.6rem;
+      color: var(--pink);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 107, 139, 0.24);
+      border-radius: 50%;
+      box-shadow: 0 10px 32px rgba(141, 66, 86, 0.08);
+    }
+
+    .hero__mark svg {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    .hero__title {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: clamp(3.05rem, 14.5vw, 5.6rem);
+      font-weight: 800;
+      line-height: 1.01;
+      letter-spacing: -0.065em;
+    }
+
+    .hero__title span {
+      display: block;
+      color: var(--pink-deep);
+    }
+
+    .hero__lead {
+      max-width: 22rem;
+      margin-top: 1.15rem;
+      color: var(--muted);
+      font-size: clamp(0.92rem, 3.7vw, 1.03rem);
+      line-height: 1.9;
+    }
+
+    .hero__names {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.35rem;
+    }
+
+    .name-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.15rem;
+      padding: 0.25rem 0.85rem;
+      color: #9e5d6c;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px dashed rgba(255, 107, 139, 0.4);
+      border-radius: 999px;
+    }
+
+    .hero__amp {
+      color: var(--gold);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .counter {
+      width: min(100%, 25rem);
+      margin-top: 1.6rem;
+      padding: 0.9rem 0.9rem 0.95rem;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(255, 107, 139, 0.15);
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .counter__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+      padding-inline: 0.2rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .counter__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+
+    .counter__unit {
+      min-width: 0;
+      padding: 0.65rem 0.2rem 0.52rem;
+      text-align: center;
+      background: #fffafb;
+      border: 1px solid rgba(255, 107, 139, 0.08);
+      border-radius: 0.9rem;
+    }
+
+    .counter__number {
+      display: block;
+      color: #463238;
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 6vw, 1.65rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .counter__label {
+      display: block;
+      margin-top: 0.36rem;
+      color: var(--muted-soft);
+      font-size: 0.61rem;
+      letter-spacing: 0.1em;
+    }
+
+    .counter__hint {
+      margin-top: 0.65rem;
+      color: #b07a86;
+      font-size: 0.61rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.55rem;
+      color: #a27c85;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+    }
+
+    .scroll-cue__line {
+      width: 1px;
+      height: 2rem;
+      background: linear-gradient(var(--pink), rgba(255, 107, 139, 0));
+    }
+
+    /* Story */
+    .story-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .story-quote {
+      position: relative;
+      padding: 1.4rem;
+      overflow: hidden;
+      background: linear-gradient(145deg, #fff2f5, #fffafb);
+      border: 1px solid rgba(255, 107, 139, 0.14);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 14px 40px rgba(111, 55, 73, 0.05);
+    }
+
+    .story-quote::after {
+      content: "♡";
+      position: absolute;
+      right: -0.5rem;
+      bottom: -2.2rem;
+      color: rgba(255, 107, 139, 0.075);
+      font-family: var(--font-display);
+      font-size: 7rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .story-quote__mark {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3rem;
+      line-height: 0.8;
+    }
+
+    .story-quote p {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+      color: #4d353c;
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 0.9rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0.8rem;
+      bottom: 0.8rem;
+      left: 1.02rem;
+      width: 1px;
+      background: linear-gradient(rgba(255, 107, 139, 0.35), rgba(212, 175, 55, 0.25), transparent);
+    }
+
+    .timeline__item {
+      position: relative;
+      padding-left: 2.8rem;
+    }
+
+    .timeline__dot {
+      position: absolute;
+      top: 0.25rem;
+      left: 0;
+      display: grid;
+      place-items: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      color: #9f4b61;
+      font-size: 0.62rem;
+      font-weight: 800;
+      background: #fff;
+      border: 1px solid rgba(255, 107, 139, 0.28);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(255, 249, 251, 0.94);
+    }
+
+    .timeline__card {
+      padding: 0.95rem 1rem;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 107, 139, 0.12);
+      border-radius: 1.2rem;
+      box-shadow: 0 10px 30px rgba(111, 55, 73, 0.045);
+    }
+
+    .timeline__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline__tag {
+      color: var(--gold-deep);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .timeline__title {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .timeline__text {
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.79rem;
+      line-height: 1.75;
+    }
+
+    @media (min-width: 640px) {
+      .story-grid {
+        grid-template-columns: 0.82fr 1.18fr;
+        align-items: start;
+        gap: 1.15rem;
+      }
+
+      .story-quote {
+        padding: 1.6rem;
+      }
+    }
+
+    /* Album */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .photo-card {
+      margin: 0;
+    }
+
+    .photo-card__frame {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      color: #ad6e7d;
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.95), transparent 38%),
+        linear-gradient(150deg, #fff6f8, #ffe7ed);
+      border: 1px dashed rgba(255, 107, 139, 0.32);
+      border-radius: 1.25rem;
+    }
+
+    .photo-card__frame::before {
+      content: "";
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+    }
+
+    .photo-card__icon {
+      display: grid;
+      place-items: center;
+      width: 2.35rem;
+      height: 2.35rem;
+      color: rgba(255, 107, 139, 0.72);
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 107, 139, 0.18);
+      border-radius: 50%;
+    }
+
+    .photo-card__icon svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    .photo-card__label {
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .photo-card figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.55rem 0.25rem 0;
+      color: var(--muted);
+      font-size: 0.68rem;
+    }
+
+    .photo-card__number {
+      color: #b29a61;
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    /* Details */
+    .details-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .detail-card {
+      position: relative;
+      padding: 1.15rem;
+      overflow: hidden;
+      background: linear-gradient(155deg, #ffffff, #fff9fa);
+      border: 1px solid rgba(255, 107, 139, 0.13);
+      border-radius: 1.35rem;
+      box-shadow: 0 12px 36px rgba(111, 55, 73, 0.045);
+    }
+
+    .detail-card::after {
+      content: "";
+      position: absolute;
+      right: -2rem;
+      bottom: -2.5rem;
+      width: 6rem;
+      height: 6rem;
+      background: radial-gradient(circle, rgba(255, 107, 139, 0.075), transparent 68%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .detail-card--featured {
+      background: linear-gradient(155deg, #fff3f6, #ffe9ef);
+      border-color: rgba(255, 107, 139, 0.2);
+    }
+
+    .detail-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .detail-card__index {
+      color: var(--gold-deep);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .detail-card__icon {
+      display: grid;
+      place-items: center;
+      width: 2.15rem;
+      height: 2.15rem;
+      color: var(--pink-deep);
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 107, 139, 0.16);
+      border-radius: 50%;
+    }
+
+    .detail-card__icon svg {
+      width: 1.05rem;
+      height: 1.05rem;
+    }
+
+    .detail-card h3 {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .detail-card p {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    .detail-card__line {
+      width: 1.75rem;
+      height: 1px;
+      margin-top: 1rem;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0.55;
+    }
+
+    /* Interaction */
+    .interaction-panel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: clamp(1.8rem, 8vw, 2.8rem) 1.2rem;
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.98), transparent 62%),
+        linear-gradient(155deg, #fff7f9, #ffe9ef);
+      border: 1px solid rgba(255, 107, 139, 0.17);
+      border-radius: 1.75rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .interaction-panel::before {
+      content: "♡";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: rgba(255, 255, 255, 0.48);
+      font-family: var(--font-display);
+      font-size: 17rem;
+      line-height: 1;
+      transform: translate(-50%, -48%) rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .interaction-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .heart-button {
+      display: grid;
+      place-items: center;
+      width: 5.25rem;
+      height: 5.25rem;
+      margin-top: 0.45rem;
+      color: var(--pink);
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 107, 139, 0.24);
+      border-radius: 50%;
+      box-shadow: 0 14px 34px rgba(226, 82, 114, 0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .heart-button svg {
+      width: 2.15rem;
+      height: 2.15rem;
+    }
+
+    .heart-button.is-beating svg {
+      animation: heart-pop 0.45s cubic-bezier(0.2, 0.8, 0.3, 1);
+    }
+
+    @keyframes heart-pop {
+      0% { transform: scale(1); }
+      35% { transform: scale(1.28); }
+      65% { transform: scale(0.94); }
+      100% { transform: scale(1); }
+    }
+
+    .interaction-title {
+      margin-top: 0.2rem;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.14rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .interaction-copy {
+      max-width: 20rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .heart-count {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      margin-top: 0.2rem;
+      color: #a06f7b;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+    }
+
+    .heart-count strong {
+      color: var(--pink-deep);
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Ending */
+    .ending-card {
+      position: relative;
+      padding: clamp(2.2rem, 10vw, 4rem) 1.5rem;
+      overflow: hidden;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 90% 8%, rgba(255, 255, 255, 0.2), transparent 34%),
+        linear-gradient(135deg, #ff819d 0%, #ff6b8b 52%, #e95578 100%);
+      border-radius: clamp(1.5rem, 5vw, 2.25rem);
+      box-shadow: 0 24px 70px rgba(219, 74, 107, 0.22);
+    }
+
+    .ending-card::before {
+      content: "♡";
+      position: absolute;
+      right: -2rem;
+      bottom: -4.5rem;
+      color: rgba(255, 255, 255, 0.09);
+      font-family: var(--font-display);
+      font-size: 14rem;
+      line-height: 1;
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    .ending-card::after {
+      content: "";
+      position: absolute;
+      inset: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: calc(clamp(1.5rem, 5vw, 2.25rem) - 0.5rem);
+      pointer-events: none;
+    }
+
+    .ending-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ending-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: #fff5d9;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .ending-kicker::before,
+    .ending-kicker::after {
+      content: "";
+      width: 1.2rem;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .ending-card h2 {
+      margin: 0.9rem 0 0.7rem;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 9vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .ending-quote {
+      max-width: 23rem;
+      margin-inline: auto;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.88rem;
+      line-height: 1.9;
+    }
+
+    .ending-signature {
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+    }
+
+    .ending-card .placeholder-badge {
+      margin-top: 1.2rem;
+      color: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(255, 255, 255, 0.26);
+    }
+
+    .ending-card .placeholder-badge::before {
+      background: #ffe6a3;
+    }
+
+    /* Footer */
+    .site-footer {
+      width: min(var(--content-width), calc(100% - 2.5rem));
+      margin-inline: auto;
+      padding: 0 0 calc(2.25rem + env(safe-area-inset-bottom));
+      color: #a38a92;
+      font-size: 0.62rem;
+      line-height: 2;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .site-footer__heart {
+      color: var(--pink);
+    }
+
+    .site-footer__rule {
+      width: 1.75rem;
+      height: 1px;
+      margin: 0 auto 0.85rem;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
+    }
+
+    @media (min-width: 640px) {
+      .album-grid {
+        gap: 1rem;
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+    }
+
+    @media (hover: hover) {
+      .heart-button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(226, 82, 114, 0.21);
+      }
+    }
+
+    .heart-button:active {
+      transform: scale(0.96);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .heart-button.is-beating svg {
+        animation: none;
+      }
+
+      .skip-link {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 359px) {
+      .page-container,
+      .site-footer {
+        width: calc(100% - 2rem);
+      }
+
+      .hero__names {
+        gap: 0.55rem;
+      }
+
+      .name-chip {
+        padding-inline: 0.7rem;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <main id="main">
+    <!-- 英雄区 -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="page-container hero__inner">
+        <p class="hero__topline reveal">
+          <span class="hero__dot" aria-hidden="true"></span>
+          Our Little Universe
+          <span class="hero__dot" aria-hidden="true"></span>
+        </p>
+
+        <span class="hero__mark reveal reveal--1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+          </svg>
+        </span>
+
+        <h1 class="hero__title reveal reveal--1" id="hero-title">
+          我们的
+          <span>小宇宙</span>
+        </h1>
+
+        <p class="hero__lead reveal reveal--2">
+          把每一个心动的瞬间，<br>
+          都好好收藏在这里。
+        </p>
+
+        <div class="hero__names reveal reveal--2" aria-label="姓名占位">
+          <span class="name-chip">王铭烁</span>
+          <span class="hero__amp" aria-hidden="true">♥</span>
+          <span class="name-chip">张媛</span>
+        </div>
+
+        <div class="counter reveal reveal--3" aria-label="在一起的时间，计时器占位">
+          <div class="counter__head">
+            <span>我们在一起</span>
+            <span class="placeholder-badge">计时器</span>
+          </div>
+          <div class="counter__grid" aria-hidden="true">
+            <div class="counter__unit">
+              <span class="counter__number">--</span>
+              <span class="counter__label">天</span>
+            </div>
+            <div class="counter__unit">
+              <span class="counter__number">--</span>
+              <span class="counter__label">时</span>
+            </div>
+            <div class="counter__unit">
+              <span class="counter__number">--</span>
+              <span class="counter__label">分</span>
+            </div>
+            <div class="counter__unit">
+              <span class="counter__number">--</span>
+              <span class="counter__label">秒</span>
+            </div>
+          </div>
+          <p class="counter__hint">纪念日 · 2026.11.7</p>
+        </div>
+
+        <a class="scroll-cue reveal reveal--3" href="#story">
+          <span>向下慢慢看</span>
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 我们的故事 -->
+    <section class="section" id="story" aria-labelledby="story-title">
+      <div class="page-container">
+        <header class="section-head reveal">
+          <p class="section-kicker">
+            <span class="section-kicker__index">01</span>
+            <span>Our Story</span>
+            <span class="section-kicker__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="section-title" id="story-title">我们的故事</h2>
+          <p class="section-lead">从一句你好开始，慢慢写成属于我们的长篇故事。</p>
+        </header>
+
+        <div class="story-grid">
+          <aside class="story-quote reveal">
+            <span class="story-quote__mark" aria-hidden="true">“</span>
+            <p>这一页，留给我们的开始。</p>
+            <span class="placeholder-badge">故事引言</span>
+          </aside>
+
+          <ol class="timeline" aria-label="故事时间线占位">
+            <li class="timeline__item reveal">
+              <span class="timeline__dot" aria-hidden="true">01</span>
+              <article class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="placeholder-badge">2026.10.5</span>
+                  <span class="timeline__tag">相遇</span>
+                </div>
+                <h3 class="timeline__title">第一次认识你</h3>
+                <p class="timeline__text">这里会写下我们认识时，那个值得记住的片段。</p>
+              </article>
+            </li>
+            <li class="timeline__item reveal reveal--1">
+              <span class="timeline__dot" aria-hidden="true">02</span>
+              <article class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="placeholder-badge">2026.10.20</span>
+                  <span class="timeline__tag">心动</span>
+                </div>
+                <h3 class="timeline__title">第一次心动</h3>
+                <p class="timeline__text">这里会写下第一次心动，或一件只有我们懂的小事。</p>
+              </article>
+            </li>
+            <li class="timeline__item reveal reveal--2">
+              <span class="timeline__dot" aria-hidden="true">03</span>
+              <article class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="placeholder-badge">时间占位</span>
+                  <span class="timeline__tag">现在</span>
+                </div>
+                <h3 class="timeline__title">故事标题</h3>
+                <p class="timeline__text">这里会写下走到今天的我们，还有想一起去的以后。</p>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 甜蜜相册 -->
+    <section class="section section--soft" id="album" aria-labelledby="album-title">
+      <div class="page-container">
+        <header class="section-head reveal">
+          <p class="section-kicker">
+            <span class="section-kicker__index">02</span>
+            <span>Sweet Album</span>
+            <span class="section-kicker__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="section-title" id="album-title">甜蜜相册</h2>
+          <p class="section-lead">把笑得很傻、抱得很紧的瞬间，一张一张留在这里。</p>
+        </header>
+
+        <!-- 后续把 photo-card__frame 替换为 assets/photo-01.jpg 等本地图片 -->
+        <div class="album-grid">
+          <figure class="photo-card reveal">
+            <div class="photo-card__frame">
+              <span class="photo-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3"/>
+                  <circle cx="8.5" cy="9.5" r="1.5"/>
+                  <path d="m21 15-4.5-4.5L8 19"/>
+                </svg>
+              </span>
+              <span class="photo-card__label">照片占位 01</span>
+            </div>
+            <figcaption>
+              <span>照片说明占位</span>
+              <span class="photo-card__number">01</span>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal reveal--1">
+            <div class="photo-card__frame">
+              <span class="photo-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3"/>
+                  <circle cx="8.5" cy="9.5" r="1.5"/>
+                  <path d="m21 15-4.5-4.5L8 19"/>
+                </svg>
+              </span>
+              <span class="photo-card__label">照片占位 02</span>
+            </div>
+            <figcaption>
+              <span>照片说明占位</span>
+              <span class="photo-card__number">02</span>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal">
+            <div class="photo-card__frame">
+              <span class="photo-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3"/>
+                  <circle cx="8.5" cy="9.5" r="1.5"/>
+                  <path d="m21 15-4.5-4.5L8 19"/>
+                </svg>
+              </span>
+              <span class="photo-card__label">照片占位 03</span>
+            </div>
+            <figcaption>
+              <span>照片说明占位</span>
+              <span class="photo-card__number">03</span>
+            </figcaption>
+          </figure>
+
+          <figure class="photo-card reveal reveal--1">
+            <div class="photo-card__frame">
+              <span class="photo-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="3"/>
+                  <circle cx="8.5" cy="9.5" r="1.5"/>
+                  <path d="m21 15-4.5-4.5L8 19"/>
+                </svg>
+              </span>
+              <span class="photo-card__label">照片占位 04</span>
+            </div>
+            <figcaption>
+              <span>照片说明占位</span>
+              <span class="photo-card__number">04</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 心动细节 -->
+    <section class="section" id="details" aria-labelledby="details-title">
+      <div class="page-container">
+        <header class="section-head reveal">
+          <p class="section-kicker">
+            <span class="section-kicker__index">03</span>
+            <span>Little Things</span>
+            <span class="section-kicker__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="section-title" id="details-title">心动细节</h2>
+          <p class="section-lead">爱不总是轰轰烈烈，更多时候，它藏在每一个小细节里。</p>
+        </header>
+
+        <div class="details-grid">
+          <article class="detail-card reveal">
+            <div class="detail-card__top">
+              <span class="detail-card__index">Detail 01</span>
+              <span class="detail-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="4"/>
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+                </svg>
+              </span>
+            </div>
+            <h3>日常里的小温柔</h3>
+            <p>这里会写下一件让我们会心一笑的小事，也许是习惯，也许是一句口头禅。</p>
+            <span class="detail-card__line" aria-hidden="true"></span>
+          </article>
+
+          <article class="detail-card detail-card--featured reveal reveal--1">
+            <div class="detail-card__top">
+              <span class="detail-card__index">Detail 02</span>
+              <span class="detail-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+                </svg>
+              </span>
+            </div>
+            <h3>只属于我们的默契</h3>
+            <p>这里会写下一个不用说出口的小秘密，和只有两个人能接住的梗。</p>
+            <span class="detail-card__line" aria-hidden="true"></span>
+          </article>
+
+          <article class="detail-card reveal reveal--2">
+            <div class="detail-card__top">
+              <span class="detail-card__index">Detail 03</span>
+              <span class="detail-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m12 3 2.2 5.3L19.5 9l-4.1 3.8 1.2 5.7L12 15.6l-4.6 2.9 1.2-5.7L4.5 9l5.3-.7L12 3Z"/>
+                </svg>
+              </span>
+            </div>
+            <h3>想和你做的小事</h3>
+            <p>这里会写下一个关于以后的小愿望，等我们慢慢把它变成回忆。</p>
+            <span class="detail-card__line" aria-hidden="true"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 互动区 -->
+    <section class="section section--soft" id="interaction" aria-labelledby="interaction-title">
+      <div class="page-container">
+        <header class="section-head reveal">
+          <p class="section-kicker">
+            <span class="section-kicker__index">04</span>
+            <span>For You</span>
+            <span class="section-kicker__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="section-title" id="interaction-title">互动区</h2>
+          <p class="section-lead">一个会回应你的小小角落，把今天的心动也留在这里。</p>
+        </header>
+
+        <div class="interaction-panel reveal">
+          <span class="placeholder-badge">互动区占位 · 点击预览</span>
+          <button class="heart-button" id="heart-button" type="button" aria-label="点击爱心，收集一次心动">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z" fill="currentColor" fill-opacity=".14"/>
+            </svg>
+          </button>
+          <h3 class="interaction-title">把心动留在这里</h3>
+          <p class="interaction-copy" id="heart-hint">轻轻点一下，收下一份只属于我们的小小回应。</p>
+          <p class="heart-count">
+            <span>已被点亮</span>
+            <strong id="love-count">0</strong>
+            <span>次</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 结尾 -->
+    <section class="section" id="ending" aria-labelledby="ending-title">
+      <div class="page-container">
+        <div class="ending-card reveal">
+          <p class="ending-kicker">To Be Continued</p>
+          <h2 id="ending-title">未完待续</h2>
+          <p class="ending-quote">最后想对你说的话，和对未来的期待，都会好好放在这里。</p>
+          <div class="ending-signature">—— 王铭烁</div>
+          <span class="placeholder-badge">永远爱你</span>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__rule" aria-hidden="true"></div>
+    <p>Made with <span class="site-footer__heart" aria-hidden="true">♥</span> for our little universe</p>
+    <p>© <span id="year">2026</span> 我们的小宇宙 · 把每一天都写成纪念</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    (() => {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+
+      const revealItems = Array.from(document.querySelectorAll(".reveal"));
+      if (!("IntersectionObserver" in window) || reducedMotion.matches) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver((entries, instance) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            instance.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+        revealItems.forEach((item) => observer.observe(item));
+      }
+
+      const heartButton = document.getElementById("heart-button");
+      const loveCount = document.getElementById("love-count");
+      let heartbeats = 0;
+      let lastBurst = 0;
+
+      if (heartButton && loveCount) {
+        heartButton.addEventListener("click", () => {
+          heartbeats += 1;
+          loveCount.textContent = heartbeats;
+
+          heartButton.classList.remove("is-beating");
+          void heartButton.offsetWidth;
+          heartButton.classList.add("is-beating");
+          window.setTimeout(() => heartButton.classList.remove("is-beating"), 500);
+
+          const now = Date.now();
+          if (window.confetti && !reducedMotion.matches && now - lastBurst > 220) {
+            lastBurst = now;
+            const rect = heartButton.getBoundingClientRect();
+            window.confetti({
+              particleCount: 16,
+              spread: 52,
+              startVelocity: 26,
+              gravity: 0.9,
+              scalar: 0.65,
+              ticks: 80,
+              colors: ["#ff6b8b", "#ffd6df", "#d4af37", "#ffffff"],
+              disableForReducedMotion: true,
+              origin: {
+                x: (rect.left + rect.width / 2) / window.innerWidth,
+                y: (rect.top + rect.height / 2) / window.innerHeight
+              }
+            });
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
